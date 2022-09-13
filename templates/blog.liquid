@@ -1,0 +1,138 @@
+{% if settings.slideshow_blog_enabled %}
+  <div id="slide-blog">
+    <div class="bcg"
+        data-bottom-top="background-position: 50% 200px;"
+        data-top-bottom="background-position: 50% -200px;"
+        data-anchor-target="#slide-blog">
+        <div class="hsContainer">
+            <div class="hsContent {{ settings.image_blog_text_align }}">
+              <div>
+                <h1 class="headline" style="color:{{settings.image_blog_text_color}}">{{ settings.image_blog_headline }}</h1>
+                <p class="subtitle" style="color:{{settings.image_blog_text_color}}">{{ settings.image_blog_subtitle }}</p>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <a name="pagecontent" id="pagecontent"></a>
+  <div class="container">
+{% endif %}
+
+{% paginate blog.articles by 10 %}
+  {% unless settings.slideshow_blog_enabled %}
+    <div class="sixteen columns">
+      <h1 class="center"><a href="{{ blog.url }}" title="{{ blog.title | escape }}">{{ blog.title }}</a></h1>
+      <div class="feature_divider"></div>
+    </div>  
+  {% endunless %}
+
+  {% comment %}
+  <div class="section clearfix">
+    <div class="sixteen columns clearfix breadcrumb">
+      <div class="eight columns breadcrumb_text alpha" itemscope itemtype="http://schema.org/BreadcrumbList">
+        {% if settings.blog_breadcrumb %}
+          <span itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span> 
+          &nbsp;<span class="icon-right-arrow"></span>
+          <span itemscope itemtype="http://schema.org/ListItem"><a href="{{ blog.url }}" title="{{ blog.title | escape }}" itemprop="item"><span itemprop="name">{{ blog.title }}</span></a></span>       
+          {% if current_tags %}
+            {% for tag in current_tags %}
+              &nbsp;<span class="icon-right-arrow"></span>
+              <span itemscope itemtype="http://schema.org/ListItem"><a href="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ tag | escape }}" itemprop="item"><span itemprop="name">{{ tag }}</span></a></span>
+            {% endfor %}
+          {% endif %}
+              
+          {% if paginate.pages != 0 %}      
+            &nbsp;<span class="icon-right-arrow"></span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+          {% endif %}
+        {% endif %}
+      </div>
+
+      {% if settings.blog_tags %}
+        <div class="four offset-by-four columns section_select omega">
+          <select name="tag_filter" id="tag_filter" class="blog_filter">
+            <option {% unless current_tags %}selected="selected"{% endunless %} value="{{ blog.url }}">{{ 'blogs.general.view_all' | t }}</option>
+            {% for tag in blog.all_tags %}
+              <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endcomment %}
+
+  <div class="container blog_list">
+  {% for article in blog.articles %}
+    <div class="eight columns article">
+      <a href="{{ article.url }}">
+        {% if article.image.src %}
+        	<img src="{{ article.image.src | img_url: '800x' }}" alt="{{ article.title | escape }}" title="{{ article.title | escape }}">
+        {% else %}
+        	{% if article.content contains "<img" %}
+        		{% assign src = article.content | split: 'src="' %}
+        		{% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}
+        		<img src="{{ src }}" alt="{{ article.title | escape }}" title="{{ article.title | escape }}"/>
+        	{% else %}
+        		<img src="{{ article.image.src | img_url: '800x' }}" alt="{{ article.title | escape }}" title="{{ article.title | escape }}">
+        	{% endif %}
+        {% endif %}
+      </a>
+      <h2><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h2>
+      <p class="meta"><span class="icon-menu">&nbsp;</span>{{ article.published_at | date: format: "month_day_year" }}</p>
+      
+      {% comment %}
+      <div class="five columns alpha omega blog_meta">
+        <h2><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h2>
+          
+        <p class="meta">
+          {{ article.published_at | date: format: "month_day_year" }}
+        </p>
+
+        {% if article.comments_enabled? %}
+          <p class="meta">
+            <a href="{{ article.url }}#comments">{{ 'blogs.counts.comments_with_count' | t: count: article.comments_count }}</a>
+          </p>
+        {% endif %}
+
+        {% if settings.blog_tags %}
+          <p class="meta">
+            {% capture tags %}
+              {% for tag in article.tags %}
+                <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}" class="tag">{{ tag }}</a> &nbsp; 
+              {% endfor %}
+            {% endcapture %}
+            {{ 'blogs.article.posted_in_html' | t: tags: tags }}
+          </p>
+        {% endif %}
+
+      </div>
+
+      <div class="ten columns alpha blog_content">
+        {% if article.excerpt != blank %}
+          {{ article.excerpt }}
+            <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ 'blogs.general.continue_reading_html' | t }} <span class="icon-right-arrow"></span></a>
+        {% else %}
+          {{ article.content }} 
+        {% endif %}        
+      </div>
+      {% endcomment %}
+      
+    </div>
+  {% endfor %}
+  </div>
+  
+  <div class="sixteen columns">
+    {% include 'pagination' %} 
+  </div>   
+  
+{% endpaginate %}
+    
+<style type="text/css">
+  .eight.columns.article {margin-bottom: 0.5em;}
+  .eight.columns.article a img {width: 100%; height: 276px; object-fit: cover; background: #eee;}
+  .eight.columns.article h2 {line-height: 1.2; margin-bottom: .5em; margin-top: 0.25em;}
+  .blog_list .eight.columns.article:nth-child(odd) {clear: left;}
+  @media(max-width: 768px) {
+    .eight.columns.article a img {width: 100%; height: 225px;}
+  }
+</style>

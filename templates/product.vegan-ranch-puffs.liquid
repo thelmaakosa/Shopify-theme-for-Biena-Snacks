@@ -1,0 +1,208 @@
+{% comment %}
+<div id="slide-page">
+    <div class="bcg puffs-vegan-ranch"
+        data-bottom-top="background-position: 50% 200px;"
+        data-top-bottom="background-position: 50% -200px;"
+        data-anchor-target="#slide-page">
+        <div class="hsContainer">
+        <a href="#pagecontent" class="scroll-arrow animated bouncing"></a>
+      </div>
+    </div>
+</div>
+{% endcomment %}
+<a name="pagecontent" id="pagecontent"></a>
+<div class="container main content">
+<div class="sixteen columns">
+  <div class="clearfix breadcrumb">
+    <div class="nav_arrows">
+      {% if collection.previous_product %}
+        <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="ss-icon prev">&#x25C5;</a>
+      {% endif %}
+
+      {% if collection.next_product %}
+        <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="ss-icon next">&#x25BB;</a>
+      {% endif %}
+    </div>
+
+    {% if settings.product_breadcrumb %}
+      <div class="breadcrumb_text" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span> 
+        &nbsp;<span class="icon-right-arrow"></span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          {% if collection %}
+            <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item"><span itemprop="name">{{ collection.title }}</span></a>
+          {% else %}
+            <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>     
+          {% endif %}
+        </span>
+        &nbsp;<span class="icon-right-arrow"></span>
+        {{ product.title }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if settings.product_sidebar %}
+  {% include 'sidebar' %}
+  <div class="twelve columns" itemscope itemtype="http://schema.org/Product">
+    <div class="product-{{ product.id }}">
+{% else %}
+  <div class="sixteen columns" itemscope itemtype="http://schema.org/Product">
+    <div class="product-{{ product.id }}">
+{% endif %}
+
+  <div class="section product_section clearfix">
+               
+    <div class="{% if settings.product_sidebar %}seven{% else %}six offset-by-one{% endif %} columns {% if product-images == blank %}{% if settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}{% endif %} {% if settings.product_images_position == 'right' %}mobile_only{% endif %}">
+      {% include 'product-images' %}
+    </div>
+
+    <div class="{% if settings.product_sidebar %}five{% else %}seven offset-by-two{% endif %} columns {%if settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
+      
+      {% assign collection_handles = product.collections | map: 'handle'  %}
+      {% assign variant = product.selected_or_first_available_variant %}
+      <h1 class="product_name" itemprop="name">{{ product.title }}</h1>
+      
+      {% comment %}
+      <a href="#shopify-product-reviews-widget"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></a>
+      {% endcomment %}
+      <div class="yotpo bottomLine" data-product-id="{{ product.id }}">
+        {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+        {%- assign time_now = 'now' | date: '%s' %}
+        {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+        {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+        {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+        {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+        {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+        	{%- assign yotpo_bottomline_obsolete = false %}
+        {%- else %}
+        	{%- assign yotpo_bottomline_obsolete = true %}
+        {%- endif %}
+        {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+        	{{ product.metafields.yotpo.bottomline }}
+        {%- endif %}
+      </div>
+      
+      {% if settings.display_vendor %}
+        <p class="vendor">
+          <span itemprop="brand">{{ product.vendor | link_to_vendor }}</span>
+        </p>
+      {% endif %}
+
+      {% if variant.sku != blank and settings.display_sku %}
+        <p class="sku">
+          <span itemprop="sku">{{ variant.sku }}</span>
+        </p>
+      {% endif %}
+      
+       <!-- Old Price -->
+<div class="description" itemprop="description">
+  {{ product.metafields.description.product }}</div>
+      {% unless collection_handles contains 'coming-soon' %}
+        {% if settings.size_chart != blank %}
+          <a href="#size-chart" class="lightbox">{{ 'products.product.size_chart' | t }} <span class="icon-right-arrow"></span></a>
+        {% endif %}
+
+        {% include 'product-form' with 'product' %}
+      {% endunless %}  
+
+      {% if settings.display_collections or settings.display_tags or settings.display_type %}
+       <hr />
+      {% endif %}
+     
+      <div class="meta">
+        {% if settings.display_social_buttons %}
+          <div class="share-button"></div>
+        {% endif %}
+        
+        {% if settings.display_collections %}
+          <p>
+            <span class="label">{{ 'products.product.collections' | t }}:</span> 
+            <span>
+             {% for col in product.collections %}
+               <a href="{{ col.url }}" title="{{ col.title }}">{{ col.title }}</a>{% unless forloop.last %},{% endunless %} 
+             {% endfor %}
+           </span>
+         </p>
+        {% endif %}
+      
+        {% if settings.display_tags %}
+           <p>
+             {% for tag in product.tags %}
+               {% if forloop.first %}
+                 <span class="label">{{ 'products.product.tags' | t }}:</span> 
+               {% endif %}
+
+               {% unless tag contains 'meta-related-collection-' %}
+                 <span>
+                   <a href="/collections/{% if collection %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handle }}" title="{{ 'products.product.products_tagged' | t: tag: tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+                 </span>
+               {% endunless %} 
+             {% endfor %}
+           </p>
+        {% endif %}
+      
+       {% if settings.display_type %}
+          <p>
+            <span class="label">{{ 'products.product.product_types' | t }}:</span> 
+            <span>{{ product.type | link_to_type }}</span>
+          </p>
+       {% endif %}
+      </div>
+    </div>
+    
+    {% if settings.product_images_position == 'right' %}   
+      <div class="{% if settings.product_sidebar %}seven{% else %}nine{% endif %} columns {% if product-images == blank %}{% if settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}{% endif %} mobile_hidden">          
+        {% include 'product-images' %}
+      </div>
+    {% endif %}
+  </div>
+       {% comment %}
+       <!-- Start stamped.io instagram reviews -->
+      <div id="stamped-reviews-widget" data-product-ids="{{ product.id }}" data-widget-type="instagram-feed" data-feed-type="carousel" data-random="True" data-hover-text="Shop Now"></div>
+      <br class="clear" /><br class="clear" />
+      <!-- End stamped.io instagram reviews -->
+ 	  {% endcomment %}
+        {% if settings.display_related_products %}
+    {% capture limit %}{{ settings.products_per_row | plus: 1 }}{% endcapture %}
+
+    {% if collection and collection.all_products_count > 1 %}
+      {% assign col = collection.handle %}
+    {% else %}
+      {% assign col = product.collections.last.handle %}
+    {% endif %}
+
+    {% for tag in product.tags %}
+      {% if tag contains 'meta-related-collection-' %}
+        {% assign col = tag | remove: 'meta-related-collection-' %}
+        {% assign collection = collections[col] %}
+        {% capture limit %}{{ collection.products_count | plus: 1 }}{% endcapture %}
+      {% endif %}
+    {% endfor %}
+      
+    {% if col and collections[col].all_products_count > 0 %}
+      {% if collections[col].all_products_count != 1 or collections[col].products.first.id != product.id %}
+        <br class="clear" />
+        <div class="relatedProducts">
+          <h4 class="title center">{{ 'products.product.related_items' | t }}</h4>
+          <div class="feature_divider"></div>
+
+          {% assign skip_product = product %}
+          {% assign products = collections[col].products %}
+          {% assign products_per_row = settings.products_per_row %}
+          {% include 'product-loop' with settings.product_sidebar %}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+        <br class="clear" />
+      {% include 'reviews-section' %}
+
+      <br class="clear" />
+      <div class="section clearfix">
+        <div class="description hidden">
+          {{ product.description }}
+        </div>
+      </div>
+    </div>
+</div>

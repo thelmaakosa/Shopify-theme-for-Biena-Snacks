@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    
+  <meta name="facebook-domain-verification" content="gijzr6a8jhhvpmj5nlkggtlyf9owb1" />
+    
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    {% if product.id == 7715536470248 or product.id == 7719588757736 or product.id == 7966994694376 %}
+      <meta name="robots" content="noindex,nofollow">
+      {% else %}
+      <meta name="robots" content="index,follow">
+    {% endif %}
+    <meta name="p:domain_verify" content="66f3a65ccde84425a44112b8438718f0"/>
+    <meta name="google-site-verification" content="2vNAGPfKXCQyBvC5Xx2j0rWFg3-wY0Nb32rFGnbh_Ho" />
+    {% capture protocol %}{{ 'reset.css' | asset_url | truncate: 5, '' }}{% endcapture %}
+{% if protocol =='https' %}<meta name="robots" content="noindex, follow" />{% endif %}
+    {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}       
+    <title>{% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
+    
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}" />
+    {% endif %}
+
+    <!-- Custom Fonts -->
+    <link href="//fonts.googleapis.com/css?family=.|{% if settings.logo_typeface_method == "google_webfonts" %}{{ settings.logo_google_webfont_font }}:light,normal,bold|{% endif %}{% if settings.headline_typeface_method == "google_webfonts" %}{{ settings.headline_google_webfont_font }}:light,normal,bold|{% endif %}{% if settings.nav_typeface_method == "google_webfonts" %}{{ settings.nav_google_webfont_font }}:light,normal,bold|{% endif %}{% if settings.slideshow_subtitle_typeface_method == "google_webfonts" %}{{ settings.slideshow_subtitle_google_webfont_font }}:light,normal,bold|{% endif %}{% if settings.regular_typeface_method == "google_webfonts" %}{{ settings.regular_google_webfont_font }}:light,normal,bold{% endif %}" rel="stylesheet" type="text/css" />
+
+    {% include 'social-meta-info' %}
+
+    {% if collection.previous_product %}
+      <link rel="prev" href="{{ collection.previous_product }}">
+    {% endif %}
+    {% if collection.next_product %}
+      <link rel="next" href="{{ collection.next_product }}">
+    {% endif %}
+
+    <!-- Mobile Specific Metas -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+
+    <!-- Stylesheets for Parallax 2.2 -->
+    {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
+    <link rel="canonical" href="{{ canonical_url }}" />
+    
+    {% if template contains 'customer' %}
+      {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+      {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+      <!--[if lt IE 7]>
+        {{ 'json2.js' | shopify_asset_url | script_tag }}
+      <![endif]-->
+    {% endif %}
+
+    <!-- jQuery and jQuery fallback -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write("<script src='{{ "jquery.min.js" | asset_url }}'>\x3C/script>")</script>
+    {{ 'app.js' | asset_url | script_tag }}
+    {% if settings.product_slideshow_animation == 'zoom' %}{{ "cloudzoom.js" | asset_url | script_tag }}{% endif %}
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}        
+
+    <!--[if lte IE 8]>
+      {{ 'ie.css' | asset_url | stylesheet_tag }}
+      {{ 'skrollr.ie.js' | asset_url | script_tag }}
+    <![endif]-->
+    
+    {{ 'fuel-style.css' | asset_url | stylesheet_tag }}
+    
+    {% if template contains 'index' %}{{ 'dev-custom.css' | asset_url | stylesheet_tag }}{% endif %}
+
+  <!-- Bold Apps -->
+  {% include 'bold-common' %}
+  {% include 'bold-ro-init' %}
+  <!-- End Bold Apps -->
+    {{ 'bold-helper-functions.js' | asset_url | script_tag }}
+    {% include 'bold-cart' %}
+ 
+<!-- Global site tag (gtag.js) - Google AdWords: 831122756 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-831122756"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-831122756');
+</script>
+<!-- END Global site tag (gtag.js) - Google AdWords: 831122756 -->
+
+{% comment %}
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4118395.js"></script>
+<!-- End of HubSpot Embed Code -->
+{% endcomment %}
+
+<script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/ShamLQBDV7y6UtrScVwUDSEydUczmxIFvaXx1dRB/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+    
+<!-- Hotjar Tracking Code for bienasnacks.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2497937,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+    
+<script id="usntA40start" src="https://a40.usablenet.com/pt/c/bienasnacks/ls-start" color="dark" position="bottom-left" type="text/javascript" async></script>
+
+{{ content_for_header }}
+    
+  <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/MmYIIRbhzRL8wEjDmmjl1Q" async></script>
+</head>
+  {% if template contains "index" %}
+    {% assign feature_image = true %}
+  {% elsif template contains "collection" and settings.slideshow_collection_enabled %}    
+    {% assign feature_image = true %}    
+  {% elsif template contains "blog" and settings.slideshow_blog_enabled %}
+    {% assign feature_image = true %}
+  {% elsif template contains "contact" and settings.slideshow_contact_enabled %}    
+    {% assign feature_image = true %}
+ {% elsif template contains "biena" %}    
+    {% assign feature_image = true %}
+  {% else %}
+    {% assign feature_image = false %}
+  {% endif %}
+  <body class="{{ template | replace: '.', '-' | handle }} {% if feature_image %}feature_image{% endif %}">
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND93MSL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <div id="content_wrapper">
+      
+      {% comment %}
+      <div class="promo_banner secondPromo free_shipping" style="background-color: #482618;"><a href="/collections/chickpea-snacks" style="color: #fff;">ITS OUR BIRTHDAY! ENJOY 15% OFF SITEWIDE <br class="mobile_only"/>USING CODE <strong>TENYEAR15</strong></a></div>
+      <div class="promo_banner free_shipping">{{ settings.promo_text }}</div>
+      {% endcomment %}
+      
+      
+      <div class="promo_banner free_shipping">{{ settings.promo_text }}</div>
+      
+      <div>
+        <div id="header" class="mm-fixed-top">
+          <a href="#nav" class="icon-menu"><span>{{ 'layout.general.menu' | t }}</span></a>
+          <a href="{{ shop.url }}" title="{{ shop.name }}" class="mobile_logo logo">
+            {% if settings.use_logo %}
+              <img src="{% if settings.use_logo_home and feature_image %}{{ 'logo_home.png' | asset_url }}{% else %}{{ 'logo.png' | asset_url }}{% endif %}" alt="{{ shop.name }}" data-src="{{ 'logo.png' | asset_url }}" {% if settings.use_logo_home %}data-src-home="{{ 'logo_home.png' | asset_url }}"{% endif %} />
+            {% else %}
+              {{ shop.name }}
+            {% endif %}
+          </a>
+      			
+			<a href="/search" title="{{ 'general.search.title' | t }}" class="icon-search right-search icon-search-mobile" id="search-toggle"></a>
+            <a href="#cart" class="icon-cart right"><span>{{ cart.item_count }}</span></a>
+        </div>
+        
+        <div class="hidden">
+          <div id="nav">
+            <ul>
+              {% for link in linklists[settings.main_linklist].links %}
+                {% if linklists[link.handle] == empty %}
+                  <li {% if link.active %}class="Selected"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% else %}
+                  <li {% if link.active %}class="Selected"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a>
+                    <ul>
+                      {% for link in linklists[link.handle].links %}
+                        {% if linklists[link.handle] == empty %}
+                          <li {% if link.active %}class="Selected"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% else %}
+                        <li {% if link.active %}class="Selected"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a> 
+                          <ul>
+                            {% for link in linklists[link.handle].links %}                        
+                              <li {% if link.active %}class="Selected"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              {% if shop.customer_accounts_enabled %}
+                {% if customer %}
+                  <li>
+                    <a href="/account">{{ customer.name }}</a>
+                  </li>
+                  <li>
+                    {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                  </li>
+                {% else %}
+                  <li>
+                    {{ 'layout.customer.log_in' | t | customer_login_link }}
+                  </li>
+                {% endif %}
+              {% endif %}
+            </ul>
+          </div> 
+            
+          <form action="/checkout" method="post" id="cart">
+            <ul data-money-format="{{ shop.money_format }}" data-shop-currency="{{ shop.currency }}" data-shop-name="{{ shop.name | escape }}">
+              <li class="mm-subtitle"><a class="continue ss-icon" href="#cart">&#x2421;</a></li>
+
+              {% if cart.item_count == 0 %}
+                <li class="empty_cart">{{ 'layout.general.empty_cart' | t }}</li>
+              {% else %}
+                {% for item in cart.items %}
+              {% include 'bold-cart-item' with item %}
+                  <li class="cart_item {% if forloop.last %}last_cart_item{% endif %}">
+                    <p class="mm-counter">
+                      <span class="ss-icon minus">&#x002D;</span><input type="number" min="0" class="quantity" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" /><span class="ss-icon plus">&#x002B;</span>
+                    </p>
+                    <a href="{{ item.url }}">
+                      {% if item.image %}
+                        <div class="cart_image">
+                          <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}" />
+                        </div>
+                      {% endif %}
+                      <div class="item_title">{{ item.title }}</div>
+                      <strong class="price">{{ bold_item_price | money }}</strong>
+                    </a>
+                  </li>
+                {% endfor %}
+                <li class="mm-label">
+                  <p class="mm-counter">{{ bold_cart_total_price | money }}</p>
+                  <a href="/cart">
+                    <strong>{{ 'layout.general.subtotal' | t }}</strong>
+                  </a>
+                </li>
+
+                <li class="mm-subtitle clearfix">
+                  {% if settings.display_special_instructions %} 
+                    <textarea id="note" name="note" rows="2" placeholder="{{ 'layout.general.cart_note' | t }}" class="clearfix">{{ cart.note }}</textarea>        
+                  {% endif %}
+
+                  {% if settings.display_tos_checkbox %}
+                    <p class="tos">
+                      <input type="checkbox" class="tos_agree" id="sliding_agree" />
+                      <label class="tos_label" for="sliding_agree">
+                        {{ 'cart.general.agree_to_terms_html' | t }}
+                      </label>
+                    </p>
+                  {% endif %}
+
+                  <input type="submit" name="checkout" class="action_button right" value="{{ 'layout.general.checkout' | t }}" />
+                  <a href="javascript:void(0)" class="action_button edit_cart right">{{ 'layout.general.continue_shopping' | t }}</a>
+                </li>
+              {% endif %}
+            </ul>
+          </form>
+        </div>
+
+        <div class="header {% if settings.fixed_header %}mm-fixed-top is-absolute{% else %}is-absolute{% endif %} {% if feature_image %}is-absolute {% if settings.headline_animation != blank %}animated{% endif %}{% endif %} {% if template contains "index" and settings.headline_animation != blank %}fadeIn{% endif %} {% if settings.header_background %}header_bar{% elsif feature_image %}{% else %}header_bar{% endif %}">
+          <div class="container"> 
+            <div class="four columns columns logo">
+              <a class="align_left" href="{{ shop.url }}" title="{{ shop.name }}">
+                {% if settings.use_logo %}
+                  <img src="{% if settings.use_logo_home and feature_image %}{{ 'logo_home.png' | asset_url }}{% else %}{{ 'logo.png' | asset_url }}{% endif %}"  alt="{{ shop.name }}" data-src="{{ 'logo.png' | asset_url }}" {% if settings.use_logo_home %}data-src-home="{{ 'logo_home.png' | asset_url }}"{% endif %} />
+                {% else %}
+                  {{ shop.name }}
+                {% endif %}
+              </a>
+            </div>
+            
+            <div class="eight columns nav mobile_hidden">
+              <ul class="menu {{ settings.menu_alignment }}">
+                {% for link in linklists[settings.main_linklist].links %}
+                  {% if linklists[link.handle] == empty %}
+                    <li><a href="{{ link.url }}" class="top-link {% if link.active %}active{% endif %}">{{ link.title }}</a></li>
+                  {% else %}
+
+                    {% comment %}
+                      Find out how many sub-links there are total in order to determine if the drop down should be split.
+                    {% endcomment %}
+                    {% assign count = 0 %}
+                    {% for link in linklists[link.handle].links %}
+                      {% capture count %}{{ count }}*{% endcapture %}
+                      {% if linklists[link.handle] != empty %}
+                        {% for link in linklists[link.handle].links %}
+                          {% capture count %}{{ count }}*{% endcapture %}
+                        {% endfor %}
+                      {% endif %}
+                    {% endfor %}
+                    {% assign column_threshold = settings.dropdown_column_links | minus: 0 %}
+
+                    <li><a href="{{ link.url }}" class="sub-menu {% if link.active %}active{% endif %} {% for link in linklists[link.handle].links %}{% for l in linklists[link.handle].links %} {% if l.active %}active{% endif %}{% endfor %}{% if link.active %}active{% endif %}{% endfor %}">{{ link.title }}                     
+                      &nbsp;<span class="icon-down-arrow"></span></a> 
+                      <div class="dropdown animated fadeIn {% if count.size > column_threshold %}dropdown-wide{% endif %}">
+                        <div class="dropdown_links clearfix">
+                          <ul>
+                            {% assign count = 0 %}
+                            {% assign split = false %}
+                            {% for link in linklists[link.handle].links %}
+                              {% capture count %}{{ count }}*{% endcapture %}
+                              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                              {% if linklists[link.handle] != empty %}
+                                {% for link in linklists[link.handle].links %}
+                                  {% capture count %}{{ count }}*{% endcapture %}
+                                  <li>
+                                    <a class="sub-link" href="{{ link.url }}">{{ link.title }}</a>
+                                  </li>
+                                {% endfor %}
+                              {% endif %}
+
+                              {% if count.size > column_threshold and split == false %}
+                                {% assign split = true %}
+                                </ul>
+                                <ul>
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="four columns nav mobile_hidden">
+              <ul class="menu align_right">
+                {% if settings.show_multiple_currencies %}
+                  <li class="currencies">
+                    {% include 'currencies-switcher' %}
+                  </li>
+                {% endif %}
+                {% if shop.customer_accounts_enabled %}
+                  <li>
+                    <a href="/account" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</a>
+                  </li>
+                {% endif %}
+                {% if settings.search_enabled %}
+                  <li class="search">
+                    <a href="/search" title="{{ 'general.search.title' | t }}" class="icon-search" id="search-toggle"></a>
+                  </li>
+                {% endif %}
+                <li class="cart">
+                  <a href="#cart" class="icon-cart cart-button"><span>{{ cart.item_count }}</span></a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+
+
+        {% unless feature_image %}
+          <div class="container main content"> 
+        {% endunless %}
+
+        {% if template contains 'list-collections' %}
+          {% include 'collection-listing' %}
+        {% else %}
+          {{ content_for_layout }}
+        {% endif %}
+
+        </div>
+        <div class="footer">
+          <div class="container">
+
+            <div class="seven columns social_media">
+              {% if settings.social_icons_footer %}
+                <h6>Snack Along With Us @bienasnacks</h6>
+  				
+               {% if settings.facebook_link != '' %}
+                  <a href="{{ settings.facebook_link }}" title="{{ shop.name }} on Facebook" class="ss-icon" rel="me" target="_blank">
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-facebook.png">
+                  </a>              
+                {% endif %}
+              {% if settings.instagram_link != '' %}
+                  <a href="{{ settings.instagram_link }}" title="{{ shop.name }} on Instagram" class="ss-icon" rel="me" target="_blank"> 
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-instagram.png">
+                  </a>              
+                {% endif %}
+              	<a href="https://vm.tiktok.com/ZTdmGAcFe/" title="{{ shop.name }} on TikTok" class="ss-icon" rel="me" target="_blank">
+                  <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-tiktok.png" />
+                </a>
+
+               <br/>
+				
+                {% if settings.twitter_link != '' %}
+                  <a href="{{ settings.twitter_link }}" title="{{ shop.name }} on Twitter" class="ss-icon" rel="me" target="_blank">
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-twitter.png" />
+                  </a>              
+                {% endif %}
+                {% if settings.google_link != '' %}
+                  <a href="{{ settings.google_link }}" title="{{ shop.name }} on Google+" class="ss-icon" rel="publisher" target="_blank">
+                    &#xF613;
+                  </a>              
+                {% endif %}
+
+                {% if settings.youtube_link != '' %}
+                  <a href="{{ settings.youtube_link }}" title="{{ shop.name }} on YouTube" class="ss-icon" rel="me" target="_blank">
+                    &#xF630;
+                  </a>              
+                {% endif %}
+
+                {% if settings.vimeo_link != '' %}
+                  <a href="{{ settings.vimeo_link }}" title="{{ shop.name }} on Vimeo" class="ss-icon" rel="me" target="_blank">
+                    &#xF631;
+                  </a>              
+                {% endif %}
+
+                {% if settings.pinterest_link != '' %}
+                  <a href="{{ settings.pinterest_link }}" title="{{ shop.name }} on Pinterest" class="ss-icon" rel="me" target="_blank">
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-pinterest.png" />
+                  </a>              
+                {% endif %}
+
+                {% if settings.tumblr_link != '' %}
+                  <a href="{{ settings.tumblr_link }}" title="{{ shop.name }} on Tumblr" class="ss-icon" rel="me" target="_blank">
+                    &#xF620;
+                  </a>              
+                {% endif %}
+
+                {% if settings.linkedin_link != '' %}
+                  <a href="{{ settings.linkedin_link }}" title="{{ shop.name }} on LinkedIn" class="ss-icon" rel="me" target="_blank">
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-linkedin.png" />
+                  </a>              
+                {% endif %}
+              
+              	{% if settings.flickr_link != '' %}
+                  <a href="{{ settings.flickr_link }}" title="{{ shop.name }} on Flickr" class="ss-icon" rel="me" target="_blank">
+                    &#xF640;
+                  </a>              
+                {% endif %}
+              
+                {% if settings.email_link != '' %}
+                  <a href="mailto:{{ settings.email_link }}" title="Email {{ shop.name }}" class="ss-icon" target="_blank">
+                    <img src="//cdn.shopify.com/s/files/1/0897/6158/files/footer-icon-mail.png" />
+                  </a>              
+                {% endif %}
+              
+              {% endif %}
+            </div>
+
+            <div class="nine columns">
+              {% if settings.footer_linklist_1 != blank %}
+                <ul class="footer_menu">
+                  {% for link in linklists[settings.footer_linklist_1].links %}
+                    <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              {% if settings.newsletter_enabled %}
+                <p>{{ 'general.newsletter_form.description' | t }}</p>
+
+                <div class="klaviyo-form-RunHtQ klaviyoFooter"></div>
+              {% endif %}
+
+              {% if settings.footer_content_page != blank %}
+                {{ pages[settings.footer_content_page].content }}
+              {% endif %}
+
+              <p class="mobile_only">
+                {% if settings.show_multiple_currencies %}
+                  <label for="currencies">{{ 'layout.general.pick_a_currency' | t }}: </label>
+                  {% include 'currencies-switcher' %}
+                {% endif %}
+              </p>
+
+              <p class="credits">
+                &copy; {{ "now" | date: "%Y" }} {{ shop.name }}.
+                {{ settings.copyright_text }}<br />
+              </p>
+            
+              <div class="payment_methods ">
+                {% if settings.use_paypal %}<img src="{{ 'cc-paypal.png' | asset_url }}" alt="PayPal" />{% endif %}
+                {% if settings.use_bitcoin %}<img src="{{ 'cc-bitcoin.png' | asset_url }}" alt="Bitcoin" />{% endif %}
+                {% if settings.use_visa %}<img src="{{ 'cc-visa.png' | asset_url }}" alt="Visa" />{% endif %}
+                {% if settings.use_visaelectron %}<img src="{{ 'cc-visaelectron.png' | asset_url }}" alt="Visa Electron" />{% endif %}
+                {% if settings.use_mastercard %}<img src="{{ 'cc-mastercard.png' | asset_url }}" alt="Mastercard" />{% endif %}
+                {% if settings.use_amex %}<img src="{{ 'cc-amex.png' | asset_url }}" alt="American Express" />{% endif %}
+                {% if settings.use_cirrus %}<img src="{{ 'cc-cirrus.png' | asset_url }}" alt="Cirrus" />{% endif %}
+                {% if settings.use_delta %}<img src="{{ 'cc-delta.png' | asset_url }}" alt="Delta" />{% endif %}
+                {% if settings.use_discover %}<img src="{{ 'cc-discover.png' | asset_url }}" alt="Discover" />{% endif %}
+                {% if settings.use_western_union %}<img src="{{ 'cc-westernunion.png' | asset_url }}" alt="Western Union" />{% endif %}
+              </div>
+            </div>
+          </div>
+        </div> 
+      
+        <div id="search" class="animated">
+          <div class="container">
+            <div class="ten columns offset-by-three center">
+              
+              <form action="/search">
+                {% if settings.search_option != 'everything' %}
+                  <input type="hidden" name="type" value="product" />
+                {% endif %}
+                <div class="search-close ss-icon">&#x2421;</div>
+                <span class="icon-search search-submit"></span>
+                <input type="text" name="q" placeholder="{{ 'general.search.placeholder_with_shop_name' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if template contains "product" and settings.size_chart != blank %}
+      <div id="size-chart">
+        <h5 class="center">{{ pages[settings.size_chart].title }}</h5>
+        <div class="feature_divider"></div>
+        {{ pages[settings.size_chart].content }}
+      </div>
+    {% endif %}
+    {% unless page.handle contains "wholesale" %}
+    {% include 'newsletter-popup' %}
+    {% endunless %}
+    {% include 'currencies' %}
+    
+  {% unless page.handle contains "wholesale" %}
+  
+  {% endunless %}
+    
+<script async type="text/javascript">
+jQuery(document).ready(function(){
+    jQuery('#usntA40Link').attr('tabindex','1');
+});
+</script>
+    
+<!--Stamped.io -->
+    <script async type="text/javascript" data-api-key="" id="stamped-script-widget" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"></script>
+<!-- END Stamped.io -->
+{% include 'findify-tagging' %}
+{% include 'easyvideo' %}
+ {% include 'smile-initializer' %}
+
+
+<!-- Back in Stock helper snippet -->
+{% render 'back-in-stock-helper' %}
+<!-- End Back in Stock helper snippet -->
+<!-- CRITEO START -->
+{% include 'criteo-tracking' %}
+<!-- CRITEO END -->
+</body>
+</html>

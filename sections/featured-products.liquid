@@ -1,0 +1,64 @@
+<div class="container featured_products">
+  <div class="sec_heading"><h2>{{ section.settings.section-heading }}</h2></div>
+  <div class="sec_content">
+    {% for block in section.blocks %}
+    	<div class="eight columns pro_col">
+          <div class="pro_bg">
+            <a href="{{ block.settings.pro_link }}" alt="{{ block.settings.pro_name }}" title="{{ block.settings.pro_name }}"><img src="{{ block.settings.pro_img | img_url:'master' }}"></a>
+            <h3><a href="{{ block.settings.pro_link }}" alt="{{ block.settings.pro_name }}" title="{{ block.settings.pro_name }}">{{ block.settings.pro_name }}</a></h3>
+            <div class="pro_price"><strong>{{ block.settings.pro_sub }}</strong></div>
+          </div>
+          <div class="pro_action"><a href="{{ block.settings.pro_link }}" alt="Snack Now" title="Snack Now">Shop Now</a></div>
+    	</div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Heading",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section-heading",
+      "label": "Header",
+      "default": "Shop our Snacks"
+    }
+  ],
+  "name": "Featured Products",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "pro_img",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "pro_name",
+          "label": "Product Name"
+        },
+        {
+          "type": "text",
+          "id": "pro_sub",
+          "label": "Product Info"
+        },
+        {
+          "type": "url",
+          "id": "pro_link",
+          "label": "Product Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

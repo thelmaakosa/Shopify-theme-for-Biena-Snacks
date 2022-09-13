@@ -1,0 +1,131 @@
+<section class="banner display_none">
+	<div class="cust-container">
+		<div class="com-banner">
+			<div class="img-box">
+				<img src="{{ section.settings.hero_img |  img_url:'master' }}">
+			</div>
+			<div class="text-box">
+              {{ section.settings.sec_title }}
+<!-- 				<h1>So Good, <span>We Almost</span> <span>Called Them</span><span>Happy Snacks</span></h1> -->
+				<a href="{{ section.settings.sec_btn_url }}" class="btn btn-new">{{ section.settings.sec_btn_text }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="banner">
+	<div class="cust-container">
+		<div class="com-banner fuel-banner">
+			<div class="img-box">
+              <picture>
+                <source media="(max-width: 640px)" srcset="{{ section.settings.hero_img_mob |  img_url:'master' }}">
+                <source media="(min-width: 641px)" srcset="{{ section.settings.hero_img |  img_url:'master' }}">
+                <img src="{{ section.settings.hero_img |  img_url:'master' }}" alt="Tasty Thins">
+              </picture>
+              {% comment %}<img src="{{ section.settings.hero_img |  img_url:'master' }}">{% endcomment %}
+			</div>
+			<div class="text-box">
+              {{ section.settings.sec_title }}
+              <a href="{{ section.settings.sec_btn_url }}" class="btn btn-new">{{ section.settings.sec_btn_text }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<style>
+.fuel-banner {position: relative; display: inherit; flex-wrap: inherit;}  
+.fuel-banner .img-box {width: 100%;}
+.fuel-banner .img-box img {margin-top: 0px;}
+.fuel-banner .text-box {position: absolute; right: 5%; top: 5%; width: inherit; text-align: right;}
+.fuel-banner .text-box h1 {font-size: 156px; line-height: 0.85em;}
+.fuel-banner .text-box h1 small {display: block; font-size: 0.7em;}
+.fuel-banner .text-box p {font-size: 50px; color: #482618;}
+.fuel-banner .text-box .btn.btn-new {text-align: center;}
+.fuel-banner .text-box .btn.btn-new {padding: 25px 80px; min-width: auto; font-size: 40px; margin-top: 20px; line-height: 40px;}
+
+  @media (max-width: 1536px) {
+    .fuel-banner .text-box h1 {font-size: 125px;}
+    .fuel-banner .text-box p {font-size: 38px;}
+    .fuel-banner .text-box .btn.btn-new {padding: 15px 60px; font-size: 30px;}
+  }
+
+  @media (max-width: 1536px) {
+    .fuel-banner .text-box h1 {font-size: 95px;}
+    .fuel-banner .text-box p {font-size: 32px;}
+    .fuel-banner .text-box .btn.btn-new {padding: 10px 38px; font-size: 24px; margin-top: 10px;}
+  }
+
+  @media (max-width: 1024px) {
+    .fuel-banner .text-box h1 {margin-top: 0px !important; font-size: 65px !important; line-height: 1em;}
+    .fuel-banner .text-box p {font-size: 22px; line-height: 1.25em;}
+    .fuel-banner .text-box .btn.btn-new {padding: 5px 30px; font-size: 20px; margin-top: 10px;}
+  }
+
+  @media (max-width: 640px) {
+    .fuel-banner .text-box h1 {font-size: 60px; line-height: 1em; margin-top: 30px!important;}
+    .fuel-banner .text-box {right: 0px; left: 0px; top: 0px; width: 100%; text-align: center;}
+    .fuel-banner .text-box p {font-size: 24px;}
+    .fuel-banner .text-box .btn.btn-new {margin-top: 10px !important; padding: 5px 35px; font-size: 20px;}
+  }
+  
+.banner.display_none {
+  display: none;
+  background-image: url('{{ section.settings.bg_image |  img_url:'master' }}');
+    background-position: unset;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+</style>  
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+{
+        "type": "header",
+        "content": "Image Section"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_img",
+        "label": "Hero Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_img_mob",
+        "label": "Hero Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Section Background Image"
+      },
+      {
+        "type": "header",
+        "content": "Text Section"
+      },
+      {
+        "type": "html",
+        "id": "sec_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "url",
+        "id": "sec_btn_url",
+        "label": "Button Url"
+      },
+      {
+        "type": "text",
+        "id": "sec_btn_text",
+        "label": "Button Text"
+      }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

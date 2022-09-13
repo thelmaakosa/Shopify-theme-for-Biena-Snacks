@@ -1,0 +1,19 @@
+# we use Shopify as our ecommerce platform
+{%- comment -%}
+# Caution! Please read https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt before proceeding to make changes to this file.
+{% endcomment %}
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+Disallow: /products/8-x-5-oz-lil-bit-of-everything-case
+Disallow: /products/1-2oz-sea-salt-roasted-chickpeas-40-ct-case
+Disallow: /products/himalayan-salt-roasted-chickpeas
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}
+
+

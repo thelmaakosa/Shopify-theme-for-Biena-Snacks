@@ -1,0 +1,123 @@
+<!--dev section-->
+<section class="compare-sec">
+	<div class="inner-compare-sec ">
+      
+		<div class="text-box">
+          
+          <div class="inner-text-box compare-desktop-sec">
+				<h2>{{ section.settings.sec_heading }}</h2>
+            
+            
+               {{ section.settings.desktop_text }}
+            
+           <div class="btn_cont">
+                  <a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.button_txt }}</a>
+              </div>
+          </div> 
+			<div class="inner-text-box compare-mobile-sec">
+				<h2>{{ section.settings.sec_heading }}</h2>
+              
+              
+              
+              {{ section.settings.mobile_text }}
+              
+          	
+              
+				
+              
+              
+              
+
+              <div class="btn_cont">
+                  <a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.button_txt }}</a>
+              </div>
+              </div>
+		</div>
+		<div class="img-box">
+			<img src="{{ section.settings.img_ | img_url:'master' }}">
+		</div>
+	</div>
+</section>
+<!--
+<section class="compare-sec compare-mobile-sec">
+	<div class="inner-compare-sec">
+		<div class="text-box">
+			<div class="inner-text-box">
+				<h2>See how we compare!</h2>
+				<table border="0">
+					<tr>
+						<th>BIENA <sup>&copy;</sup> ROASTED <span>CHICKPEA SNACKS</span></th>
+						<th>POTATO CHIPS</th>
+					</tr>
+					<tr>
+						<td><span class="text-table"> <span>50 Chickpeas</span><span>PER SERVING</span></span>
+							<span class="text-btm">More snacks to crunch on, <span>for more snacking</span> <span>satisfaction</span>
+						</td>
+						<td><span class="text-table"><span>15 Chips</span><span>PER SERVING</span></span></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-table"><span>6g</span><span>PROTEIN</span></span>
+							<span class="text-btm">3x the protein <span>keep you fuller longer</span></span>
+						</td>
+						<td><span class="text-table"><span>2g</span><span>PROTEIN</span></span></td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text-table"><span> 6g</span><span>FIBER</span></span>
+							<span class="text-btm">High fiber foods help <span>control spikes in blood</span> <span>suger levels</span> </span>
+						</td>
+						<td><span class="text-table"><span>1g</span><span>FIBER</span></span></td>
+					</tr>
+				</table>
+              <div style="text-align:center;">
+                  <a href="/collections/classic-roasted-chickpeas" class="btn">Shop Roasted Chickpea Snacks</a>
+              </div>
+			</div>
+		</div>
+		<div class="img-box">
+			<img src="https://cdn.shopify.com/s/files/1/0897/6158/files/side-img.png?v=1642681498">
+		</div>
+	</div>
+</section>
+-->
+<!--end section-->
+{% schema %}
+  {
+    "name": "Image with text",
+    "settings": [
+{
+				"type": "text",
+				"id": "sec_heading",
+				"label": "Section Heading"
+			},{
+				"type": "image_picker",
+				"id": "img_",
+				"label": "Section Image"
+			},{
+				"type": "html",
+				"id": "desktop_text",
+				"label": "Desktop Table (Html)"
+			},{
+				"type": "html",
+				"id": "mobile_text",
+				"label": "Mobile Table(HTML)"
+			},{
+				"type": "url",
+				"id": "btn_url",
+				"label": "Button url"
+			},{
+				"type": "text",
+				"id": "button_txt",
+				"label": "Button Text"
+			}
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,58 @@
+{% if page.handle == "our-story" %}
+
+<div class="sixteen columns page clearfix">
+  <h1 class="center">Our Story</h1>
+  <div class="feature_divider"></div>
+
+  <div class="container os_mobile_reverse_order">
+    <div class="five columns alpha">
+      <p class="founder-text"><img src="https://cdn.shopify.com/s/files/1/0897/6158/files/BF-Founder-Poorvi-Patodia.png?v=1661367793" alt="Poorvi Patodia, Founder &amp; CEO - Biena Snacks" style="width: 100%;" /></p>
+      <p class="founder-text">Poorvi Patodia, Founder &amp; CEO</p>
+
+      <!-- Sign Up Code -->
+      <div class="klaviyo-form-VDd7vF"></div>
+  
+      <div class="sec-oursnacks our_story">
+        <h2>Try Poorvi's Favorites Today</h2>
+        <div class="sec-row">
+          <div class="sec-column">
+            <a href="/products/habanero" class="image"><img class="lazyload" src="//cdn.shopify.com/s/files/1/0897/6158/files/biena-about-cs-habanero.jpg" alt="Habanero Roasted Chickpea" title="Habanero Roasted Chickpea"></a>
+            <a href="/products/habanero" class="title">Habanero <br/>Roasted</a>
+            <a href="/products/habanero" class="btn">Shop Now</a>
+          </div>
+          <div class="sec-column">
+            <a href="/products/tuscan-herb-tasty-thins" class="image"><img class="lazyload" src="//cdn.shopify.com/s/files/1/0897/6158/files/our-story-tasty-herb.png" alt="Vegan Cheddar Baked Puffs" title="Vegan Cheddar Baked Puffs"></a>
+            <a href="/products/tuscan-herb-tasty-thins" class="title">Tuscan Herb<br/>Tasty Thins</a>
+            <a href="/products/tuscan-herb-tasty-thins" class="btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="eleven columns omega">
+      <p>Hi there! This is Poorvi, the Founder of Biena. Mom of two and a bonafide snack food junkie. I created Biena because of the lack of healthy options to support my snacking obsession.</p>
+      <p>I had a vision of the nutrient-packed crispy chickpeas of my childhood becoming a staple snack in the pantries of Americans. I started experimenting in my kitchen to fine-tune the roasting process.</p>
+      <p>As I started talking to friends and family, I realized we could impact people’s health for the better by replacing standard junk food snacks with much healthier alternatives.</p>
+      <p>In 2012 I launched Biena, at a time when the trend around plant-protein snacks was still in its infancy. From our roots in a single store outside of Boston to 15,000 retail locations nationwide, we have grown a lot.</p>
+      <p>In 2022, we have given chips a major upgrade with the launch of <a href="https://bienasnacks.com/collections/tasty-thins/products/tasty-thins-variety-pack">Tasty Thins</a>. They’re made with chickpeas & veggies, and have 30 crisps per serving so you can snack with zero guilt. Most importantly – they’re absolutely delicious!</p>
+      <p>Choosing Biena means you get the crunch and taste you crave in a healthier way.</p>
+      <p><a href="https://bienasnacks.com/pages/store-locator" style="font-weight: 700;">Find our snacks here</a> and follow our journey by joining our email list.</p>
+      <p>&nbsp;</p>
+      <p><img src="//cdn.shopify.com/s/files/1/0897/6158/files/signature_e5b9e62e-2307-42a3-ac16-b51ea5ea57e6.png?12434918069819048104" /></p>
+    </div>
+  </div>
+</div>
+
+{% else %}
+
+<div class="sixteen columns page clearfix">
+  <h1 class="center">
+    {{ page.title }}
+  </h1>
+  <div class="feature_divider"></div>
+
+  <div>
+    {{ page.content }}
+  </div>
+</div>
+
+{% endif %}

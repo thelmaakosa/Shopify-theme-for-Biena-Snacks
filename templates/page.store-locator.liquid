@@ -1,0 +1,110 @@
+<div class="sixteen columns page clearfix store-locator-section">
+  <h1 class="center">
+    Store Locator
+  </h1>
+  <div class="feature_divider"></div>
+
+  <div>
+    {{ page.content }}
+  </div>
+</div>
+
+<div class="online-retailers">
+  <h1 class="center">Also Available at These Online Retailers</h1>
+  <div class="feature_divider"></div>
+  <ul>
+  <li>
+    <a target="_blank" href="https://bienasnacks.com/collections/chickpea-snacks">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/logo_1.png?v=1587076866">
+    </a>
+  </li>
+  <li>
+    <a target="_blank" href="https://www.amazon.com/stores/node/7642943011?_encoding=UTF8&amp;field-lbr_brands_browse-bin=Biena&amp;ref_=bl_dp_s_web_7642943011">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/20180911104538148amazon-logo.jpg?v=1587076866">
+    </a>
+  </li>
+  <li>
+    <a target="_blank" href="www.thrivemarket.com">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/thrive-market.png?v=1587076866">
+    </a>
+  </li>
+  <li>
+    <a target="_blank" href="https://www.freshdirect.com/srch.jsp?pageType=search&amp;searchParams=biena&amp;pageSize=30&amp;all=false&amp;activePage=1&amp;sortBy=Sort_Relevancy&amp;orderAsc=true&amp;activeTab=product">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/fresh-direct.png?v=1587076866">
+    </a>
+  </li>
+  <li>
+    <a target="_blank" href="https://www.vitacost.com/productsearch.aspx?ss=1&amp;t=biena">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/vitacost.png?v=1587076866">
+    </a>
+  </li>
+  <li>
+    <a target="_blank" href="https://bienasnacks.com/pages/wholesale">
+      <img src="https://cdn.shopify.com/s/files/1/0897/6158/files/biena-wholesale2.png?v=1587078341">
+    </a>
+  </li>
+  </ul>
+</div>
+
+
+<style>
+.store-locator-section {
+  margin-bottom: 75px !important;
+}
+  
+.online-retailers h1 {
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+  
+.online-retailers ul {
+  list-style-type: none;
+  max-width: 100%;
+  display: inline-flex;
+  margin-left: 0;
+}
+
+.online-retailers ul li {
+  width: 16.66666%;
+  padding: 0 25px;
+}
+  
+.online-retailers ul li img{
+  width: 100%;
+/*   padding: 10px 25px; */
+}
+  
+@media only screen and (max-width: 959px) {
+.online-retailers ul {
+  list-style-type: none;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.online-retailers ul li {
+  width: 30%;
+  padding: 25px;
+}
+  
+.online-retailers ul li img {
+  padding: 0px;
+}
+}
+  
+@media only screen and (max-width: 767px) {
+.online-retailers ul {
+  justify-content: space-between;
+}
+
+.online-retailers ul li {
+  width: 45%;
+  padding: 0px;
+}
+  
+}
+</style>

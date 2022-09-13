@@ -1,0 +1,73 @@
+<!--dev section-->
+<section class="compare-sec">
+	<div class="inner-compare-sec ">
+      
+		<div class="text-box">
+          
+          <div class="inner-text-box compare-desktop-sec">
+				<h2>{{ section.settings.sec_heading }}</h2>
+            
+            
+               {{ section.settings.desktop_text }}
+            
+           <div class="btn_cont">
+                  <a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.button_txt }}</a>
+              </div>
+          </div> 
+			<div class="inner-text-box compare-mobile-sec">
+				<h2>{{ section.settings.sec_heading }}</h2>
+              
+              
+              
+              {{ section.settings.mobile_text }}
+              
+          	<div class="btn_cont">
+                  <a href="{{ section.settings.btn_url }}" class="btn">{{ section.settings.button_txt }}</a>
+              </div>
+              </div>
+		</div>
+		<div class="img-box">
+			<img src="{{ section.settings.img_ | img_url:'master' }}">
+		</div>
+	</div>
+</section>
+
+{% schema %}
+  {
+    "name": "Image with text 2",
+    "settings": [
+{
+				"type": "text",
+				"id": "sec_heading",
+				"label": "Section Heading"
+			},{
+				"type": "image_picker",
+				"id": "img_",
+				"label": "Section Image"
+			},{
+				"type": "html",
+				"id": "desktop_text",
+				"label": "Desktop Table(html)"
+			},{
+				"type": "html",
+				"id": "mobile_text",
+				"label": "Mobile Table(html)"
+			},{
+				"type": "url",
+				"id": "btn_url",
+				"label": "Button url"
+			},{
+				"type": "text",
+				"id": "button_txt",
+				"label": "Button Text"
+			}
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
