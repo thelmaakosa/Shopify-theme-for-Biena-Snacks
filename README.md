@@ -3,6 +3,9 @@
 
 # Code files
 theme.liquid
+
 product-loop-for-search.liquid
+
 robots.txt.liquid
+
 search.liquid
